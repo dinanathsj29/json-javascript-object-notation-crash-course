@@ -36,7 +36,7 @@ This course/Tutorial is for anyone and everyone, Almost everyone!
 
 Why learn JSON
 ---------------------
-JSON stands for JavaScript Object Notation is text-based and human-readable. JSON has become a widely accepted and popular format for data due to its platform-neutral nature, lightweight format, and it’s the ability to convert directly to native JavaScript Objects. JSON is being used everywhere from Web APIs to noSQL databases, to server-side language libraries and client-side frameworks.
+JSON stands for JavaScript Object Notation is text-based and human-readable. JSON has become a widely accepted and popular format for data due to its platform-neutral nature, lightweight format, and it’s the ability to convert directly to native JavaScript Objects. JSON is being used everywhere from Web APIs to NoSQL databases, to server-side language libraries and client-side frameworks.
 
 JSON has significantly improved server-to-browser communications, especially when it comes to AJAX. JSON is better than XML and more popular! Easily exchange data between client and server applications. JSON is easy to use and built for storing and exchanging data.
 
@@ -74,9 +74,12 @@ Topics included/covered
     - 1.3. [What JSON is not?](#13-what-json-is-not)
     - 1.4. [Usage of JSON](#14-usage-of-json)
     - 1.5. [Characterstics of JSON](#15-characterstics-of-json)
+    - 1.6. [JSON Syntax](#16-json-syntax)
+    - 1.7. [JSON vs XML](#17-json-vs-xml)
 
+<!-- 
 2. [JSON Resources](#2-json-resources)
-
+-->
 
 1 Introduction to JSON
 =====================
@@ -114,7 +117,7 @@ JSON uses, follows and based on Object Literal Notation syntax of JavaScript. JS
 - JSON is easy to use and built for storing and exchanging data
 - Since the JSON format is text only, it can easily be sent to and from a server and used as a data format by any programming language
 
-JSON has become a widely accepted and popular format for data due to its platform-neutral nature, lightweight format, and it’s the ability to convert directly to native JavaScript Objects. JSON is being used everywhere from Web APIs to noSQL databases, to server-side language libraries and client-side frameworks.
+JSON has become a widely accepted and popular format for data due to its platform-neutral nature, lightweight format, and it’s the ability to convert directly to native JavaScript Objects. JSON is being used everywhere from Web APIs to NoSQL databases, to server-side language libraries and client-side frameworks.
 
 JSON has significantly improved server-to-browser communications, especially when it comes to AJAX. JSON is better than XML and more popular! Easily exchange data between client and server applications. JSON is easy to use and built for storing and exchanging data.
 
@@ -139,6 +142,7 @@ JSON is programming language independent Data Interchange Format - an only text-
 - It is primarily used to transmit data between a server and web applications (client and server)
 - Web services and APIs use JSON format to provide public data
 - It can be used with different platform-independent modern programming languages 
+- JSON is used in Web APIs as well as NoSQL databases
 
 1.5. Characteristics of JSON
 ---------------------
@@ -148,5 +152,94 @@ JSON is programming language independent Data Interchange Format - an only text-
 - JSON is language independent
 - JSON uses, follows and based on Object Literal Notation syntax of JavaScript
 - JSON is widely used to exchange, send and receive data from server to client and vice versa
-- JSON represent data in the pair of Curley braces and in the form of key-value pairs ie property and data e.g. ` var Employee = { "employeeName": "Dinanath", "employeeId": "101"} `
+- JSON represent data in the pair of Curley braces and in the form of key-value pairs ie property and data e.g. ` var Employee = { "employeeName": "Dinanath", "employeeId": "101", "empId": 101} `
 - Transfer data easily between Server and Client
+
+1.6. JSON Syntax
+---------------------
+
+- JSON syntax is very simple and uses `name : value pair` or `key : value pair`
+
+The JSON syntax is a subset of the JavaScript syntax. JSON syntax is derived from JavaScript object notation syntax:
+- Data is in name/value pairs
+- Data is separated by commas
+- Curly braces hold objects
+- Square brackets hold arrays
+
+JSON format starts with `curley brace/bracket {` and `ends with curley brace/bracket }`. In-between curley brace we can put `"name" and value` or `"key":value` or `"property":value/data` pair, every property of the object is seperated by comma. 
+
+JSON represents data in the `pair of curly braces and in the form of key-value pairs ie property and data`. We can separate `Property Name` with the help of `colon:` then specify `property Value` and multiple properties are separated with `comma,`.
+
+```
+
+- JSON, keys must be strings, written with "double quotes", JavaScript names don't.
+
+```
+
+To access or read data from a JSON object, we simply need to use property name with `. dot notation`, will get all IntelliSense as soon as will use any jsonObjectName.propertyName i.e. JsonObjectName.propertyName or so.
+
+As soon as we assign JSON format/values to any JavaScript variable, it becomes a JavaScript object to which we can access via `. dot notation`.
+
+### 1.6.1. JSON Values
+In JSON, values must be one of the following data types:
+
+- a string
+- a number
+- an object (JSON object)
+- an array
+- a boolean
+- null
+
+> **Syntax & Example**: `1.6.1-employee.json`
+
+```
+{ 
+  "employeeName": "Dinanath",
+  "employeeId": 100,
+  "department": "IT-Development",
+  "role": "Sr. UI Developer",
+  "salary": 100000
+}
+```
+
+<hr/>
+
+> **Syntax & Example**: `1.6.2-technology.json`
+
+```
+{
+  "technologyName": "JSON (JavaScript Object Notation)",
+  "inventor": "Douglas Crockford",
+  "usage": "Data storage and exchange format",
+  "version": 1.0,
+  "cost": 0,
+  "license": "Open Source - MIT"
+}
+```
+
+> **Syntax & Example**: `1.6.3-person.json`
+
+```
+{ 
+  "name": "Dinanath",
+  "age": 50,
+  "country": "India",
+  "height": 5.6,
+  "color": "Black-Medium",
+  "married": true
+}
+```
+
+
+1.7. JSON vs XML
+---------------------
+
+### 1.7.1. Difference between JSON and XML
+
+| JSON                            | XML                                   |
+| --------------------------------|---------------------------------------|
+| JavaScript Object Notation      | eXtensible Markup Language            |
+| JSON uses `key : value` or `name : value` pair to store data (JSON doesn't use end tag) | XML uses tags **&lt; value &gt;** to store data | 
+| JSON is shorter                 | XML is pretty larger/lengthy as we need to open and close tags for every `name` or `key`|
+| JSON is quicker and easier to read and write | XML is little difficult to read and write as we need to write many tags |
+| JSON can use arrays | XML cant use arrays, it uses tags|
