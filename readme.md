@@ -76,6 +76,7 @@ Topics included/covered
     - 1.5. [Characterstics of JSON](#15-characterstics-of-json)
     - 1.6. [JSON Syntax](#16-json-syntax)
     - 1.7. [JSON vs XML](#17-json-vs-xml)
+    - 1.8. [JSON vs XML Trends](#18-json-vs-xml-trends)
 
 <!-- 
 2. [JSON Resources](#2-json-resources)
@@ -217,6 +218,8 @@ In JSON, values must be one of the following data types:
 }
 ```
 
+<hr/>
+
 > **Syntax & Example**: `1.6.3-person.json`
 
 ```
@@ -230,6 +233,16 @@ In JSON, values must be one of the following data types:
 }
 ```
 
+### 1.6.2. JSON Syntax vs JavaScript Object Syntax
+
+The JSON format is almost exactly alike to JavaScript objects.
+
+| JSON Syntax                     | JavaScript Object Syntax              |
+| --------------------------------|---------------------------------------|
+| JSON `Keys` must be strings, written with double quotes <br/> Example: ```{ "name": "Dinanath" }```   | JavaScript Object `Keys` can be strings, numbers, or identifier names <br/> Example: ```{ name: "Dinanath" }``` |
+| JSON, `string` values must be written with double quotes  <br/> Example: ```{ "country": "India" }``` | JavaScript Object, `string` values can be written with double or single quotes  <br/> Example: ```{ country: 'India' }``` |
+| JSON Object: <br/> ``` { "name": "Dinanath", "age": 50, "married": true }``` | JavaScript Object: <br/> ``` { name: 'Dinanath', age: 50, married: true }```|
+
 
 1.7. JSON vs XML
 ---------------------
@@ -239,7 +252,67 @@ In JSON, values must be one of the following data types:
 | JSON                            | XML                                   |
 | --------------------------------|---------------------------------------|
 | JavaScript Object Notation      | eXtensible Markup Language            |
-| JSON uses `key : value` or `name : value` pair to store data (JSON doesn't use end tag) | XML uses tags **&lt; value &gt;** to store data | 
+| JSON uses `key : value` or `name : value` pair to store data (JSON doesn't use end tag) | XML uses `tags **&lt; value &gt;**, element or node` to store data | 
 | JSON is shorter                 | XML is pretty larger/lengthy as we need to open and close tags for every `name` or `key`|
-| JSON is quicker and easier to read and write | XML is little difficult to read and write as we need to write many tags |
-| JSON can use arrays | XML cant use arrays, it uses tags|
+| JSON is `quicker and easier` to read and write | XML is `little difficult to read and write` as we need to write many tags |
+| JSON can use arrays             | XML cant use arrays, it uses tags     |
+| JSON can be `parsed by a standard JavaScript function`  | XML has to be `parsed with an XML parser` |
+| For AJAX applications, JSON is faster and easier than XML | XML is much more difficult to parse than JSON |
+
+### 1.7.2. Similarity between JSON and XML
+
+Both JSON and XML can be used to exchange, send and receive data from a web server
+
+- JSON and XML both are `self-describing (human-readable)`
+- JSON and XML both can be parsed and used by various programming languages
+- JSON and XML both can store hierarchical data structure (values within values)
+- Both JSON and XML can be fetched with JavaScript `XMLHttpRequest` methodology
+
+> **Syntax & Example**: `XML (eXtensible Markup Language) 1.7.1-technology.xml`
+
+```
+<Technology>
+  <technologyName>XML (eXtensible Markup Language)</Technology>
+  <inventor>Ed Mosher</inventor>
+  <usage>Data storage and exchange format</usage>
+  <version>1.0</version>
+  <cost>0</cost>
+  <license>Open Source - MIT</license>
+</Technology>
+```
+
+> **Syntax & Example**: `JSON (JavaScript Object Notation) 1.7.2-technology.json`
+
+```
+{
+  "technologyName": "XML (eXtensible Markup Language)",
+  "inventor": "Ed Mosher",
+  "usage": "Data storage and exchange format",
+  "version": 1.0,
+  "cost": 0,
+  "license": "Open Source - MIT",
+  }
+```
+
+
+1.8. JSON vs XML Trends
+---------------------
+
+### 1.8.1. JSON Trend
+- JSON is better than XML and extremely popular now a days!
+
+<p>
+ <figure>
+ &nbsp;&nbsp;&nbsp; <img src="_images-json-javascript-object-notation/1.8.1-json-trends.png" alt="JSON Google Trends" title="JSON Google Trends" width="1000" border="2" />
+ <figcaption>&nbsp;&nbsp;&nbsp; Image - JSON Google Trends</figcaption>
+ </figure>
+</p>
+
+### 1.8.2. JSON vs XML Trend
+
+<p>
+ <figure>
+ &nbsp;&nbsp;&nbsp; <img src="_images-json-javascript-object-notation/1.8.2-json-xml-trends-compare.png" alt="JSON vs XML Google Trends" title="JSON vs XML Google Trends" width="1000" border="2" />
+ <figcaption>&nbsp;&nbsp;&nbsp; Image - JSON vs XML Google Trends</figcaption>
+ </figure>
+</p>
