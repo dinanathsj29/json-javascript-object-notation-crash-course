@@ -38,7 +38,7 @@ Why learn JSON
 ---------------------
 JSON stands for JavaScript Object Notation is text-based and human-readable. JSON has become a widely accepted and popular format for data due to its platform-neutral nature, lightweight format, and it’s the ability to convert directly to native JavaScript Objects. JSON is being used everywhere from Web APIs to NoSQL databases, to server-side language libraries and client-side frameworks.
 
-JSON has significantly improved server-to-browser communications, especially when it comes to AJAX. JSON is better than XML and more popular! Easily exchange data between client and server applications. JSON is easy to use and built for storing and exchanging data.
+JSON has significantly improved server-to-browser communications, especially when it comes to AJAX. JSON is better than XML (eXtensible Markup Language) and more popular! Easily exchange data between client and server applications. JSON is easy to use and built for storing and exchanging data.
 
 
 Course/Tutorial achievement
@@ -88,12 +88,19 @@ Topics included/covered
 1.1. What is JSON?
 --------------------- 
 
+<p>
+  <figure>
+    <img src="_images-json-javascript-object-notation/json-logo-4.png" alt="JSON - JavaScript Object Notation" title="JSON - JavaScript Object Notation" width="300" border="2" align="right" />
+ </figure>
+</p>
+
 - JSON stands for `JavaScript Object Notation`
 - JSON is a syntax for storing and exchanging data
-- JSON is a lightweight data-interchange format
+- JSON is a lightweight data-interchange, Data representation format
 - JSON is `self-describing`, an easier to understand, easy to use and alternative format to `XML (eXtensible Markup Language)` also widely used these days
 - JSON is language independent (JSON uses JavaScript syntax, with text-only format, 
 Text can be read and used as a data format by any programming language)
+- JSON is commonly used for APIs and Configurations
 
 ```
 - The JSON format was specified and popularized by `Douglas Crockford`
@@ -111,6 +118,8 @@ JSON uses, follows and based on Object Literal Notation syntax of JavaScript. JS
 
 1.2. Why use JSON?
 ---------------------
+
+Other than JSON, XML (eXtensible Markup Language) use to be the only option/alternative for open data interchange.
 
 - JSON is text-based and human-readable, easily exchange data between client and server applications
 - it's a lightweight data-interchange format that is quickly becoming the default format for data exchange on the internet today!
@@ -153,7 +162,7 @@ JSON is programming language independent Data Interchange Format - an only text-
 - JSON is language independent
 - JSON uses, follows and based on Object Literal Notation syntax of JavaScript
 - JSON is widely used to exchange, send and receive data from server to client and vice versa
-- JSON represent data in the pair of Curley braces and in the form of key-value pairs ie property and data e.g. ` var Employee = { "employeeName": "Dinanath", "employeeId": "101", "empId": 101} `
+- JSON represent data in the pair of Curley braces and in the form of key-value pairs ie. property and data/value ie. attribute and data/value e.g. ` var Employee = { "employeeName": "Dinanath", "employeeId": "101", "empId": 101} `
 - Transfer data easily between Server and Client
 
 1.6. JSON Syntax
@@ -251,13 +260,16 @@ The JSON format is almost exactly alike to JavaScript objects.
 
 | JSON                            | XML                                   |
 | --------------------------------|---------------------------------------|
+| <p align="center"> <img src="_images-json-javascript-object-notation/json-logo-3.png" alt="JSON - JavaScript Object Notation" title="JSON - JavaScript Object Notation" width="200" /> </p> | <p align="center"> <img src="_images-json-javascript-object-notation/xml-logo-2.png" alt="XML - eXtensible Markup Language" title="XML - eXtensible Markup Language" width="200" /> </p>|
 | JavaScript Object Notation      | eXtensible Markup Language            |
 | JSON uses `key : value` or `name : value` pair to store data (JSON doesn't use end tag) | XML uses `tags **&lt; value &gt;**, element or node` to store data | 
-| JSON is shorter                 | XML is pretty larger/lengthy as we need to open and close tags for every `name` or `key`|
+| JSON is shorter, JSON has a more compact style than XML                 | XML is pretty larger/lengthy as we need to open and close tags for every `name` or `key`|
 | JSON is `quicker and easier` to read and write | XML is `little difficult to read and write` as we need to write many tags |
 | JSON can use arrays             | XML cant use arrays, it uses tags     |
 | JSON can be `parsed by a standard JavaScript function`  | XML has to be `parsed with an XML parser` |
 | For AJAX applications, JSON is faster and easier than XML | XML is much more difficult to parse than JSON |
+| JSON uses less data overall, so reduces the cost and increases the parsing speed | The XML parsing process can take a long time due to verbose nature of xml and its element structure |
+| JSON uses a `map data structure`| XML uses a `tree data structure` |
 
 ### 1.7.2. Similarity between JSON and XML
 
@@ -280,6 +292,8 @@ Both JSON and XML can be used to exchange, send and receive data from a web serv
   <license>Open Source - MIT</license>
 </Technology>
 ```
+
+<hr/>
 
 > **Syntax & Example**: `JSON (JavaScript Object Notation) 1.7.2-technology.json`
 
@@ -308,7 +322,18 @@ Both JSON and XML can be used to exchange, send and receive data from a web serv
  </figure>
 </p>
 
+<hr/>
+
 ### 1.8.2. JSON vs XML Trend
+
+<p>
+  <figure>
+   <img src="_images-json-javascript-object-notation/xml-logo-1.png" alt="XML - eXtensible Markup Language" title="XML - eXtensible Markup Language" width="125" border="2" align="right"/>
+    <img src="_images-json-javascript-object-notation/json-logo-4.png" alt="JSON - JavaScript Object Notation" title="JSON - JavaScript Object Notation" width="250" border="2" align="right"/>
+ </figure>
+</p> 
+
+<br/>
 
 <p>
  <figure>
