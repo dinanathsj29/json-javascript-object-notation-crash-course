@@ -77,6 +77,7 @@ Topics included/covered
     - 1.6. [JSON Syntax](#16-json-syntax)
     - 1.7. [JSON vs XML](#17-json-vs-xml)
     - 1.8. [JSON vs XML Trends](#18-json-vs-xml-trends)
+    - 1.9. [JSON Data Types](#19-json-data-types)
 
 <!-- 
 2. [JSON Resources](#2-json-resources)
@@ -341,3 +342,25 @@ Both JSON and XML can be used to exchange, send and receive data from a web serv
  <figcaption>&nbsp;&nbsp;&nbsp; Image - JSON vs XML Google Trends</figcaption>
  </figure>
 </p>
+
+1.9. JSON Data Types
+---------------------
+
+Json supports values of the following data types:
+
+| JSON Valid Data Types                     | Data Types Description                |
+| ------------------------------------------|---------------------------------------|
+| String | Strings in JSON must be written in double quotes <br/> `"Hello",    "Dinanath",   "I/We"` |
+| Number | Numbers in JSON can be an integer or a floating point supports all types of numbers - complete number, decimal, negative number, scientific notation number) <br/> `10,   2.5,   -10,    2.5e10` |
+| Object | Most complex but widely used Data types  <br/> ` { "key": "value" } { "name": "Dinanath", "id": 101 }` |
+| Array | JSON value can be array which holds multiple items of various data types <br/> `[1,2,3,4,5]   ["Dinanath", "Akash", "Ambar", "Sagar", "Suraj"]` |
+| Boolean | true or false <br/> ` { "isDone":true }` |
+| null | null (nothing) <br/> `{ "status":null }` |
+
+```
+JSON values cannot be of following data types:
+
+- a function
+- a date
+- undefined
+```
