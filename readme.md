@@ -78,6 +78,7 @@ Topics included/covered
     - 1.7. [JSON vs XML](#17-json-vs-xml)
     - 1.8. [JSON vs XML Trends](#18-json-vs-xml-trends)
     - 1.9. [JSON Data Types](#19-json-data-types)
+    - 1.10. [Access-Modify JSON object data](#110-access-modify-json-object-data)
 
 <!-- 
 2. [JSON Resources](#2-json-resources)
@@ -99,8 +100,8 @@ Topics included/covered
 - JSON is a syntax for storing and exchanging data
 - JSON is a lightweight data-interchange, Data representation format
 - JSON is `self-describing`, an easier to understand, easy to use and alternative format to `XML (eXtensible Markup Language)` also widely used these days
-- JSON is language independent (JSON uses JavaScript syntax, with text-only format, 
-Text can be read and used as a data format by any programming language)
+- JSON is often used with `AJAX (Asynchronous JavaScript and XML)`
+- JSON is language independent (JSON uses JavaScript syntax, with text-only format, Text can be read and used as a data format by most/any modern programming language)
 - JSON is commonly used for APIs and Configurations
 
 ```
@@ -355,7 +356,7 @@ Json supports values of the following data types:
 | Object | Most complex but widely used Data types  <br/> ` { "key": "value" } { "name": "Dinanath", "id": 101 }` |
 | Array | JSON value can be array which holds multiple items of various data types <br/> `[1,2,3,4,5]   ["Dinanath", "Akash", "Ambar", "Sagar", "Suraj"]` |
 | Boolean | true or false <br/> ` { "isDone":true }` |
-| null | null (nothing) <br/> `{ "status":null }` |
+| null | null (nothing/empty value) <br/> `{ "status":null }` |
 
 ```
 JSON values cannot be of following data types:
@@ -363,4 +364,81 @@ JSON values cannot be of following data types:
 - a function
 - a date
 - undefined
+```
+
+
+1.10. Access-Modify JSON object data
+---------------------
+
+JavaScript object or JSON object data can be accessed and modified by two syntax or ways:
+- Dot notation syntax 
+- Square bracket syntax 
+
+### 1.10.1. Dot notation 
+To access, read or modify JSON object data, we simply need to use property name with `. dot notation`, will get all IntelliSense as soon as will use any `jsonObjectName.propertyName` or so.
+
+As soon as we assign JSON format/values to any JavaScript variable, it becomes a JavaScript object to which we can access via `. dot notation`.
+
+```jsonObjectName.propertyName``` or ```TechnologyJSON.technologyName```
+
+### 1.10.2. Square bracket
+Second or another way to access, read or modify JSON object data is Square bracket notation
+
+```jsonObjectName.['propertyName']``` or ```TechnologyJSON.['technologyName']```
+
+> **Syntax & Example**: `1.10.1-access-modify-json-data.html`
+
+```
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>json-access-modify-data</title>
+
+    <script type="text/javascript">
+
+      // creating JSON object
+      var TechnologyJSON = {
+        "technologyName": "JSON (JavaScript Object Notation)",
+        "inventor": "Douglas Crockford",
+        "usage": "Data storage and exchange format",
+        "version": 1.0,
+        "cost": 0,
+        "license": "Open Source - MIT"
+      }
+
+      // accessing data from a json object
+      // JsonObjectName.propertyName
+
+      // Dot notation syntax 
+      console.log(TechnologyJSON.inventor);
+      document.write('<li>' + TechnologyJSON.inventor + '</li>');
+      document.write('<li>' + TechnologyJSON.usage + '</li>');
+
+      // Square bracket syntax 
+      console.log(TechnologyJSON['inventor']);
+      document.write('<li>' + TechnologyJSON['inventor'] + '</li>');
+      document.write('<li>' + TechnologyJSON['license'] + '</li>');
+
+      // modifying data
+      var techName1 = TechnologyJSON.technologyName = 'XML';
+      console.log(techName1);
+      document.write('<br/><br/><li>' + techName1 + '</li>');
+
+      var techName2 = TechnologyJSON['technologyName'] = 'AJAX';
+      console.log(techName2);
+      document.write('<br/><br/><li>' + techName2 + '</li>');
+
+    </script>
+
+  </head>
+
+  <body>
+    
+  </body>
+
+</html>
 ```
