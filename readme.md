@@ -79,6 +79,9 @@ Topics included/covered
     - 1.8. [JSON vs XML Trends](#18-json-vs-xml-trends)
     - 1.9. [JSON Data Types](#19-json-data-types)
     - 1.10. [Access-Modify JSON object data](#110-access-modify-json-object-data)
+    - 1.11. [JSON Parse](#111-json-parse)
+    - 1.12. [JSON Stringify](#112-json-stringify)
+
 
 <!-- 
 2. [JSON Resources](#2-json-resources)
@@ -188,7 +191,7 @@ JSON represents data in the `pair of curly braces and in the form of key-value p
 
 ```
 
-To access or read data from a JSON object, we simply need to use property name with `. dot notation`, will get all IntelliSense as soon as will use any jsonObjectName.propertyName i.e. JsonObjectName.propertyName or so.
+To access or read data from a JSON object, we simply need to use property name with `. dot notation`, will get all IntelliSense as soon as will use any `jsonObjectName.propertyName` i.e. `JsonObjectName.propertyName` or so.
 
 As soon as we assign JSON format/values to any JavaScript variable, it becomes a JavaScript object to which we can access via `. dot notation`.
 
@@ -379,12 +382,12 @@ To access, read or modify JSON object data, we simply need to use property name 
 
 As soon as we assign JSON format/values to any JavaScript variable, it becomes a JavaScript object to which we can access via `. dot notation`.
 
-```jsonObjectName.propertyName``` or ```TechnologyJSON.technologyName```
+> **Syntax**: ```jsonObjectName.propertyName``` or ```TechnologyJSON.technologyName```
 
 ### 1.10.2. Square bracket
 Second or another way to access, read or modify JSON object data is Square bracket notation
 
-```jsonObjectName.['propertyName']``` or ```TechnologyJSON.['technologyName']```
+> **Syntax**: ```jsonObjectName.['propertyName']``` or ```TechnologyJSON.['technologyName']```
 
 > **Syntax & Example**: `1.10.1-access-modify-json-data.html`
 
@@ -432,6 +435,106 @@ Second or another way to access, read or modify JSON object data is Square brack
       console.log(techName2);
       document.write('<br/><br/><li>' + techName2 + '</li>');
 
+    </script>
+
+  </head>
+
+  <body>
+    
+  </body>
+
+</html>
+```
+
+
+1.11. JSON Parse
+---------------------
+
+1.11. Converting a JSON string to JSON array/object
+---------------------
+
+- `JSON.parse()` method converts a JSON string to JSON array/object
+- `JSON.parse()` Parse a string (written in JSON format) and return a JavaScript object
+- Usually data receiving from a web server is string, with `JSON.parse()` method one can Parse the data to JavaScript object
+- `JSON.parse()` was first added to the `fifth edition of ECMAScript`, which as of `2017` is supported by all major browsers
+
+> **Syntax & Example**: `1.11.1-json-parse.html`
+
+```
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>json-parse</title>
+
+    <script type="text/javascript">
+
+      // creating string object to hold json like data
+      var TechnologyStringObj = '{ "technologyName": "JSON (JavaScript Object Notation)", "inventor": "Douglas Crockford", "usage": "Data storage and exchange format", "version": 1.0, "cost": 0, "license": "Open Source - MIT" }';
+
+      // parse a string object to json
+      var TechnologyJSON = JSON.parse(TechnologyStringObj);
+      console.log(TechnologyJSON);
+
+      // accessing data from a json object
+      // JsonObjectName.propertyName
+      console.log(TechnologyJSON.technologyName);
+      
+    </script>
+
+  </head>
+
+  <body>
+    
+  </body>
+
+</html>
+```
+
+
+1.12. JSON Stringify
+---------------------
+
+1.12. Converting a JSON object or JSON array into a string
+---------------------
+
+- `JSON.stringify()` method converts a JSON object or JSON array into a string
+- `JSON.stringify()` method converts a JavaScript object or value to a JSON string
+- When sending data to a web server the data has to be a string
+
+> **Syntax & Example**: `1.12.1-json-stringify.html`
+
+```
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>json-stringify</title>
+
+    <script type="text/javascript">
+
+      // json object
+      var TechnologyJSON = { "technologyName": "JSON (JavaScript Object Notation)", "inventor": "Douglas Crockford", "usage": "Data storage and exchange format", "version": 1.0, "cost": 0, "license": "Open Source - MIT" };
+
+      console.log(TechnologyJSON);
+      console.log(TechnologyJSON.technologyName);
+
+      // parse a json object to string
+      var TechnologyJSONStringify = JSON.stringify(TechnologyJSON);
+      console.log(TechnologyJSONStringify);
+      console.log(TechnologyJSONStringify.technologyName); //undefined
+
+      // parse a string object to json
+      var TechnologyJSONObj = JSON.parse(TechnologyJSONStringify);
+      console.log(TechnologyJSONObj);
+      console.log(TechnologyJSONObj.technologyName);
+      
     </script>
 
   </head>
