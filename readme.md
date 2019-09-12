@@ -81,6 +81,8 @@ Topics included/covered
     - 1.10. [Access-Modify JSON object data](#110-access-modify-json-object-data)
     - 1.11. [JSON Parse](#111-json-parse)
     - 1.12. [JSON Stringify](#112-json-stringify)
+    - 1.13. [JSON Arrays](#113-json-arrays)
+    - 1.14. [Nested JSON Objects](#114-nested-json-objects)
 
 
 <!-- 
@@ -181,7 +183,7 @@ The JSON syntax is a subset of the JavaScript syntax. JSON syntax is derived fro
 - Curly braces hold objects
 - Square brackets hold arrays
 
-JSON format starts with `curley brace/bracket {` and `ends with curley brace/bracket }`. In-between curley brace we can put `"name" and value` or `"key":value` or `"property":value/data` pair, every property of the object is seperated by comma. 
+JSON format starts with `curley brace/bracket {` and `ends with curley brace/bracket }`. In-between curley brace we can put `"name" and value` or `"key":value` or `"property":value/data` pair, every property of the object is separated by comma. 
 
 JSON represents data in the `pair of curly braces and in the form of key-value pairs ie property and data`. We can separate `Property Name` with the help of `colon:` then specify `property Value` and multiple properties are separated with `comma,`.
 
@@ -275,6 +277,7 @@ The JSON format is almost exactly alike to JavaScript objects.
 | For AJAX applications, JSON is faster and easier than XML | XML is much more difficult to parse than JSON |
 | JSON uses less data overall, so reduces the cost and increases the parsing speed | The XML parsing process can take a long time due to verbose nature of xml and its element structure |
 | JSON uses a `map data structure`| XML uses a `tree data structure` |
+| JSON - JavaScript Object Notation - coding structure and syntax: <p align="center"> <img src="_images-json-javascript-object-notation/1.7.1-technology-xml.png" alt="JSON - JavaScript Object Notation - coding structure and syntax" title="JSON - JavaScript Object Notation - coding structure and syntax" width="" /> </p> | XML - eXtensible Markup Language - coding structure and syntax: <p align="center"> <img src="_images-json-javascript-object-notation/1.7.2-technology-json.png" alt="XML - eXtensible Markup Language - coding structure and syntax" title="XML - eXtensible Markup Language - coding structure and syntax" width="" />  </p> |
 
 ### 1.7.2. Similarity between JSON and XML
 
@@ -535,6 +538,134 @@ Second or another way to access, read or modify JSON object data is Square brack
       console.log(TechnologyJSONObj);
       console.log(TechnologyJSONObj.technologyName);
       
+    </script>
+
+  </head>
+
+  <body>
+    
+  </body>
+
+</html>
+```
+
+1.13. JSON Arrays
+---------------------
+
+- We can store more than one record or more than on technology, employee or required data in the JSON object, this is when JSON arrays can be used
+- Arrays in JSON are as same as JavaScript arrays
+- `A JSON array can contain multiple objects in [ square bracket separated with comma, ]`
+
+### To create a JSON array:
+1. Wrap the objects in `[ square brackets ]`
+2. Each object must be seperated with a comma `{ },`
+3. `Object = [ { }, { }, { }, { } ]`
+
+> **Syntax & Example**: `1.13.1-json-array.html`
+```
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>json-array</title>
+
+    <script type="text/javascript">
+
+      // creating JSON object
+      var TechnologiesJSONArray = [
+        {
+          "technologyName": "JSON (JavaScript Object Notation)",
+          "usage": "Data storage and exchange format",
+          "version": 1.0,
+          "cost": 0.00
+        },
+        
+        {
+          "technologyName": "HTML (HyperText Markup Language)",
+          "usage": "To create a web page pages/web sites/web apps",
+          "version": 5.0,
+          "cost": 0.00
+        }
+      ];
+
+      console.log(TechnologiesJSONArray);
+
+      // accessing data from a json object
+      // jsonObject[arrayPosition/ indexPosition].propertyName;
+      console.log(TechnologiesJSONArray[0].version); // 1.0
+      console.log(TechnologiesJSONArray[1].version); // 5.0
+
+      document.write('<li> <strong>Technology Name:</strong> ' + TechnologiesJSONArray[0].technologyName + ' || <strong>Version is:</strong> ' + TechnologiesJSONArray[0].version + '</li>');
+      document.write('<li> <strong>Technology Name:</strong> ' + TechnologiesJSONArray[1].technologyName + ' || <strong>Version is:</strong> ' + TechnologiesJSONArray[1].version + '</li>');
+
+    </script>
+
+  </head>
+
+  <body>
+    
+  </body>
+
+</html>
+```
+
+1.14. Nested JSON Objects
+---------------------
+
+1.14. JSON Objects
+---------------------
+
+- We know that JSON objects are surrounded by curly braces `{ }`
+- As per logic and requirements we can store multiple objects inside a main JSON object
+- `Object = {   { }, { }, { }, { }   }`
+
+> **Syntax & Example**: `1.14.1-json-nested-objects.html`
+```
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>json-nested-objectes</title>
+
+    <script type="text/javascript">
+
+      // creating JSON object
+      var TechnologyJSONObject = {
+        "Json": {
+          "technologyName": "JSON (JavaScript Object Notation)",
+          "usage": "Data storage and exchange format",
+          "version": 1.0,
+          "cost": 0.00
+        },
+
+        "Html": {
+          "technologyName": "HTML (HyperText Markup Language)",
+          "usage": "To create a web page pages/web sites/web apps",
+          "version": 5.0,
+          "cost": 0.00
+        },
+      };
+
+      console.log(TechnologyJSONObject);
+
+      // accessing data from a json object 
+      // jsonMainObject.jsonSubObjectName.propertyName;
+      console.log(TechnologyJSONObject.Json.version); // 1.0
+      console.log(TechnologyJSONObject.Html.version); // 5.0
+
+      // square bracket syntax
+      console.log(TechnologyJSONObject.Json["version"]); // 1.0
+      console.log(TechnologyJSONObject.Html["version"]); // 5.0
+
+      document.write('<li> <strong>Technology Name:</strong> ' + TechnologyJSONObject.Json.technologyName + ' || <strong>Version is:</strong> ' + TechnologyJSONObject.Json.version + '</li>');
+      document.write('<li> <strong>Technology Name:</strong> ' + TechnologyJSONObject.Html.technologyName + ' || <strong>Version is:</strong> ' + TechnologyJSONObject.Html.version + '</li>');
+
     </script>
 
   </head>
