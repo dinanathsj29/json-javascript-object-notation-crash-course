@@ -277,7 +277,7 @@ The JSON format is almost exactly alike to JavaScript objects.
 | For AJAX applications, JSON is faster and easier than XML | XML is much more difficult to parse than JSON |
 | JSON uses less data overall, so reduces the cost and increases the parsing speed | The XML parsing process can take a long time due to verbose nature of xml and its element structure |
 | JSON uses a `map data structure`| XML uses a `tree data structure` |
-| JSON - JavaScript Object Notation - coding structure and syntax: <p align="center"> <img src="_images-json-javascript-object-notation/1.7.1-technology-xml.png" alt="JSON - JavaScript Object Notation - coding structure and syntax" title="JSON - JavaScript Object Notation - coding structure and syntax" width="" /> </p> | XML - eXtensible Markup Language - coding structure and syntax: <p align="center"> <img src="_images-json-javascript-object-notation/1.7.2-technology-json.png" alt="XML - eXtensible Markup Language - coding structure and syntax" title="XML - eXtensible Markup Language - coding structure and syntax" width="" />  </p> |
+ JSON - JavaScript Object Notation - coding structure and syntax: <p align="center"> <img src="_images-json-javascript-object-notation/1.7.2-technology-json.png" alt="JSON - JavaScript Object Notation - coding structure and syntax" title="JSON - JavaScript Object Notation - coding structure and syntax" width="" /> </p> | XML - eXtensible Markup Language - coding structure and syntax: <p align="center"> <img src="_images-json-javascript-object-notation/1.7.1-technology-xml.png" alt="XML - eXtensible Markup Language - coding structure and syntax" title="XML - eXtensible Markup Language - coding structure and syntax" width="" />  </p> |
 
 ### 1.7.2. Similarity between JSON and XML
 
