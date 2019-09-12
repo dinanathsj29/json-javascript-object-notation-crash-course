@@ -83,8 +83,7 @@ Topics included/covered
     - 1.12. [JSON Stringify](#112-json-stringify)
     - 1.13. [JSON Arrays](#113-json-arrays)
     - 1.14. [Nested JSON Objects](#114-nested-json-objects)
-
-
+    - 1.15. [Looping through JSON Array-Objects](#115-looping-through-json-array-objects)
 <!-- 
 2. [JSON Resources](#2-json-resources)
 -->
@@ -209,7 +208,7 @@ In JSON, values must be one of the following data types:
 
 > **Syntax & Example**: `1.6.1-employee.json`
 
-```
+```json
 { 
   "employeeName": "Dinanath",
   "employeeId": 100,
@@ -223,7 +222,7 @@ In JSON, values must be one of the following data types:
 
 > **Syntax & Example**: `1.6.2-technology.json`
 
-```
+```json
 {
   "technologyName": "JSON (JavaScript Object Notation)",
   "inventor": "Douglas Crockford",
@@ -238,7 +237,7 @@ In JSON, values must be one of the following data types:
 
 > **Syntax & Example**: `1.6.3-person.json`
 
-```
+```json
 { 
   "name": "Dinanath",
   "age": 50,
@@ -277,7 +276,7 @@ The JSON format is almost exactly alike to JavaScript objects.
 | For AJAX applications, JSON is faster and easier than XML | XML is much more difficult to parse than JSON |
 | JSON uses less data overall, so reduces the cost and increases the parsing speed | The XML parsing process can take a long time due to verbose nature of xml and its element structure |
 | JSON uses a `map data structure`| XML uses a `tree data structure` |
- JSON - JavaScript Object Notation - coding structure and syntax: <p align="center"> <img src="_images-json-javascript-object-notation/1.7.2-technology-json.png" alt="JSON - JavaScript Object Notation - coding structure and syntax" title="JSON - JavaScript Object Notation - coding structure and syntax" width="" /> </p> | XML - eXtensible Markup Language - coding structure and syntax: <p align="center"> <img src="_images-json-javascript-object-notation/1.7.1-technology-xml.png" alt="XML - eXtensible Markup Language - coding structure and syntax" title="XML - eXtensible Markup Language - coding structure and syntax" width="" />  </p> |
+| JSON - JavaScript Object Notation - coding structure and syntax: <p align="center"> <img src="_images-json-javascript-object-notation/1.7.2-technology-json.png" alt="JSON - JavaScript Object Notation - coding structure and syntax" title="JSON - JavaScript Object Notation - coding structure and syntax" width="" /> </p> | XML - eXtensible Markup Language - coding structure and syntax: <p align="center"> <img src="_images-json-javascript-object-notation/1.7.1-technology-xml.png" alt="XML - eXtensible Markup Language - coding structure and syntax" title="XML - eXtensible Markup Language - coding structure and syntax" width="" />  </p> |
 
 ### 1.7.2. Similarity between JSON and XML
 
@@ -290,7 +289,7 @@ Both JSON and XML can be used to exchange, send and receive data from a web serv
 
 > **Syntax & Example**: `XML (eXtensible Markup Language) 1.7.1-technology.xml`
 
-```
+```xml
 <Technology>
   <technologyName>XML (eXtensible Markup Language)</Technology>
   <inventor>Ed Mosher</inventor>
@@ -305,7 +304,7 @@ Both JSON and XML can be used to exchange, send and receive data from a web serv
 
 > **Syntax & Example**: `JSON (JavaScript Object Notation) 1.7.2-technology.json`
 
-```
+```json
 {
   "technologyName": "XML (eXtensible Markup Language)",
   "inventor": "Ed Mosher",
@@ -394,7 +393,7 @@ Second or another way to access, read or modify JSON object data is Square brack
 
 > **Syntax & Example**: `1.10.1-access-modify-json-data.html`
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -463,7 +462,7 @@ Second or another way to access, read or modify JSON object data is Square brack
 
 > **Syntax & Example**: `1.11.1-json-parse.html`
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -510,7 +509,7 @@ Second or another way to access, read or modify JSON object data is Square brack
 
 > **Syntax & Example**: `1.12.1-json-stringify.html`
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -562,7 +561,8 @@ Second or another way to access, read or modify JSON object data is Square brack
 3. `Object = [ { }, { }, { }, { } ]`
 
 > **Syntax & Example**: `1.13.1-json-array.html`
-```
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -623,7 +623,8 @@ Second or another way to access, read or modify JSON object data is Square brack
 - `Object = {   { }, { }, { }, { }   }`
 
 > **Syntax & Example**: `1.14.1-json-nested-objects.html`
-```
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -673,6 +674,216 @@ Second or another way to access, read or modify JSON object data is Square brack
   <body>
     
   </body>
+
+</html>
+```
+
+1.15. Looping through JSON Array-Objects
+---------------------
+
+### 1.15.1. Looping Through an Array
+- One can access JSON array values by using a `for` or `for-in` loop:
+
+> **Syntax & Example**: `1.15.1-looping-json-array.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>looping-json-array</title>
+
+    <script type="text/javascript">
+
+      // creating JSON object
+      var TechnologyJSON = {
+          "technologyName": "JSON (JavaScript Object Notation)",
+          "usage": "Data storage and exchange format",
+          "version": 1.0,
+          "cost": 0.00,
+          "keywords":['json','JavaScript','Object','Notation','key','value','key value pair']
+      };
+
+      console.log(TechnologyJSON);
+
+      // accessing data from a json object 
+      // jsonMainObject.jsonSubObjectName.propertyName;
+      console.log(TechnologyJSON.keywords);
+      console.log(TechnologyJSON.keywords[0]);
+
+      // 1. for loop
+      let keywordsLength = TechnologyJSON.keywords.length;
+
+      document.write('<h1> Technology keyword - For loop </h1>');
+      for(let keyword=0; keyword < keywordsLength; keyword++) {
+        document.write('<li>' + TechnologyJSON.keywords[keyword] + '</li>');
+      }
+
+      // 2. for in loop
+      document.write('----------------------------------------------------');
+      document.write('<h1> Technology keyword  - For in loop </h1>');
+
+      let keywords = TechnologyJSON.keywords;
+      for(let kw in keywords) {
+        document.write('<li>' + TechnologyJSON.keywords[kw] + '</li>');
+      }
+
+    </script>
+
+  </head>
+
+  <body>
+    
+  </body>
+
+</html>
+```
+
+
+### 1.15.2. Looping Through an Object
+
+> **Syntax & Example**: `1.15.2-looping-json-object.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>looping-json-object</title>
+
+    <script type="text/javascript">
+
+      // creating JSON object
+      var TechnologyJSON = {
+          "technologyName": "JSON (JavaScript Object Notation)",
+          "usage": "Data storage and exchange format",
+          "version": 1.0,
+          "cost": 0.00,
+          "keywords":['json','JavaScript','Object','Notation','key','value','key value pair'],
+
+          "Html": {
+            "technologyName": "HTML (HyperText Markup Language)",
+            "usage": "To create a web page pages/web sites/web apps",
+            "version": 5.0,
+            "cost": 0.00
+          },
+      };
+
+      console.log(TechnologyJSON);
+
+      // accessing data from a json object 
+      // jsonMainObject.jsonSubObjectName.propertyName;
+      console.log(TechnologyJSON.keywords);
+      console.log(TechnologyJSON.keywords[0]);
+      console.log(TechnologyJSON.Html);
+      console.log('----------------------------------------------------');
+
+      // for in loop
+      // document.write('----------------------------------------------------');
+      document.write('<h1> JSON Object keys </h1>');
+
+      for(let _key in TechnologyJSON) {
+        document.write('<li>' + _key + '</li>');
+      }
+
+      // document.write('----------------------------------------------------');
+      document.write('<h1> JSON Object keys and Values</h1>');
+
+      for(let _key in TechnologyJSON) {
+        document.write('<li>' + _key + ' : ' + TechnologyJSON[_key] + '</li>');
+      }
+
+      // document.write('----------------------------------------------------');
+      document.write('<h1> JSON Object - Inner objects keys and Values</h1>');
+
+      for(let _key in TechnologyJSON.Html) {
+        document.write('<li>' + _key + ' : ' + TechnologyJSON.Html[_key] + '</li>');
+      }
+
+    </script>
+
+  </head>
+
+  <body>
+    
+  </body>
+
+</html>
+```
+
+> **Syntax & Example**: `1.15.3-looping-json-array.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>looping-json-array</title>
+
+  <script type="text/javascript">
+
+    // creating JSON object
+    var ColorsJSON = {
+      "colors": ["Cyan", "Magenta", "Yellow", "Black", "Red", "Green", "Blue"],
+      "colorDetails": [
+        { "colorName": "Red", "colorHexCode": "#ff0000" },
+        { "colorName": "Green", "colorHexCode": "#00ff00" },
+        { "colorName": "Blue", "colorHexCode": "#0000ff" },
+      ]
+    };
+
+    console.log(ColorsJSON);
+
+    // accessing data from a json object 
+    // jsonMainObject.jsonSubObjectName.propertyName;
+    console.log(ColorsJSON.colors);
+    console.log(ColorsJSON.colors[0]);
+    console.log('----------------------------------------------------');
+
+    // for loop
+    document.write('<h1> Color Index & Color values - For loop </h1>');
+    let totalColors = ColorsJSON.colors.length;
+    for (let colorIndex = 0; colorIndex < totalColors; colorIndex++) {
+      document.write('<li>' + colorIndex + " : " + ColorsJSON.colors[colorIndex] + '</li>');
+    }
+
+    // for in loop
+    document.write('----------------------------------------------------');
+    document.write('<h1> Color Index & Color values - For in loop </h1>');
+
+    for(let _key in ColorsJSON.colors) {
+      document.write('<li>' + ColorsJSON.colors[_key] + '</li>');
+    }
+
+    document.write('----------------------------------------------------');
+    document.write('<h1> Inner Color Index & Color values - For in loop </h1>');
+
+    for (let mainKey in ColorsJSON.colorDetails) {
+      
+      for(let innerKey in ColorsJSON.colorDetails[mainKey]) {
+
+        document.write('<li>' + ColorsJSON.colorDetails[mainKey][innerKey] + '</li>');
+
+      }
+
+    }
+
+  </script>
+
+</head>
+
+<body>
+
+</body>
 
 </html>
 ```
