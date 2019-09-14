@@ -84,9 +84,8 @@ Topics included/covered
     - 1.13. [JSON Arrays](#113-json-arrays)
     - 1.14. [Nested JSON Objects](#114-nested-json-objects)
     - 1.15. [Looping through JSON Array-Objects](#115-looping-through-json-array-objects)
-<!-- 
+
 2. [JSON Resources](#2-json-resources)
--->
 
 1 Introduction to JSON
 =====================
@@ -497,7 +496,7 @@ Second or another way to access, read or modify JSON object data is Square brack
 ```
 
 
-1.12. JSON Stringify
+12 JSON Stringify
 ---------------------
 
 1.12. Converting a JSON object or JSON array into a string
@@ -527,9 +526,16 @@ Second or another way to access, read or modify JSON object data is Square brack
       console.log(TechnologyJSON);
       console.log(TechnologyJSON.technologyName);
 
+      // by default json object are not printed in html view - it shows `[object Object]`
+      document.write('initial TechnologyJSON object:', TechnologyJSON);
+
       // parse a json object to string
       var TechnologyJSONStringify = JSON.stringify(TechnologyJSON);
-      console.log(TechnologyJSONStringify);
+
+      // once json object converted to string - it can be available/placed for view
+      document.write('<br/> <br/> <strong>JSON.stringify</strong> :', TechnologyJSONStringify);
+
+      console.log('JSON.stringify TechnologyJSONStringify: ', TechnologyJSONStringify);
       console.log(TechnologyJSONStringify.technologyName); //undefined
 
       // parse a string object to json
@@ -823,67 +829,88 @@ Second or another way to access, read or modify JSON object data is Square brack
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>looping-json-array</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>looping-json-array</title>
 
-  <script type="text/javascript">
+    <script type="text/javascript">
 
-    // creating JSON object
-    var ColorsJSON = {
-      "colors": ["Cyan", "Magenta", "Yellow", "Black", "Red", "Green", "Blue"],
-      "colorDetails": [
-        { "colorName": "Red", "colorHexCode": "#ff0000" },
-        { "colorName": "Green", "colorHexCode": "#00ff00" },
-        { "colorName": "Blue", "colorHexCode": "#0000ff" },
-      ]
-    };
+      // creating JSON object
+      var ColorsJSON = {
+        "colors": ["Cyan", "Magenta", "Yellow", "Black", "Red", "Green", "Blue"],
+        "colorDetails": [
+          { "colorName": "Red", "colorHexCode": "#ff0000" },
+          { "colorName": "Green", "colorHexCode": "#00ff00" },
+          { "colorName": "Blue", "colorHexCode": "#0000ff" },
+        ]
+      };
 
-    console.log(ColorsJSON);
+      console.log(ColorsJSON);
 
-    // accessing data from a json object 
-    // jsonMainObject.jsonSubObjectName.propertyName;
-    console.log(ColorsJSON.colors);
-    console.log(ColorsJSON.colors[0]);
-    console.log('----------------------------------------------------');
+      // accessing data from a json object 
+      // jsonMainObject.jsonSubObjectName.propertyName;
+      console.log(ColorsJSON.colors);
+      console.log(ColorsJSON.colors[0]);
+      console.log('----------------------------------------------------');
 
-    // for loop
-    document.write('<h1> Color Index & Color values - For loop </h1>');
-    let totalColors = ColorsJSON.colors.length;
-    for (let colorIndex = 0; colorIndex < totalColors; colorIndex++) {
-      document.write('<li>' + colorIndex + " : " + ColorsJSON.colors[colorIndex] + '</li>');
-    }
+      // for loop
+      document.write('<h1> Color Index & Color values - For loop </h1>');
+      let totalColors = ColorsJSON.colors.length;
+      for (let colorIndex = 0; colorIndex < totalColors; colorIndex++) {
+        document.write('<li>' + colorIndex + " : " + ColorsJSON.colors[colorIndex] + '</li>');
+      }
 
-    // for in loop
-    document.write('----------------------------------------------------');
-    document.write('<h1> Color Index & Color values - For in loop </h1>');
+      // for in loop
+      document.write('----------------------------------------------------');
+      document.write('<h1> Color Index & Color values - For in loop </h1>');
 
-    for(let _key in ColorsJSON.colors) {
-      document.write('<li>' + ColorsJSON.colors[_key] + '</li>');
-    }
+      for(let _key in ColorsJSON.colors) {
+        document.write('<li>' + ColorsJSON.colors[_key] + '</li>');
+      }
 
-    document.write('----------------------------------------------------');
-    document.write('<h1> Inner Color Index & Color values - For in loop </h1>');
+      document.write('----------------------------------------------------');
+      document.write('<h1> Inner Color Index & Color values - For in loop </h1>');
 
-    for (let mainKey in ColorsJSON.colorDetails) {
-      
-      for(let innerKey in ColorsJSON.colorDetails[mainKey]) {
+      for (let mainKey in ColorsJSON.colorDetails) {
+        
+        for(let innerKey in ColorsJSON.colorDetails[mainKey]) {
 
-        document.write('<li>' + ColorsJSON.colorDetails[mainKey][innerKey] + '</li>');
+          document.write('<li>' + ColorsJSON.colorDetails[mainKey][innerKey] + '</li>');
+
+        }
 
       }
 
-    }
+    </script>
 
-  </script>
+  </head>
 
-</head>
+  <body>
 
-<body>
-
-</body>
+  </body>
 
 </html>
 ```
+
+2 JSON Resources
+=====================  
+
+> ### JSON Editor Online - view, edit and format JSON online
+- https://jsoneditoronline.org
+
+> ### JSON Formatter & Validator
+- https://jsonformatter.curiousconcept.com
+- https://jsonlint.com/
+- https://zaa.ch/jsonlint/
+
+> ### Online free JSON data store
+- Create and use a simple JSON data store for your web or mobile app: http://myjson.com
+
+> ### Fake Online REST API for Testing and Prototyping
+- JSONPlaceholder: https://jsonplaceholder.typicode.com/
+
+> ### xml validator
+- https://www.xmlvalidation.com/
+- https://www.w3schools.com/xml/xml_validator.asp
