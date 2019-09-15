@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>looping-json-array</title>
+
+    <script type="text/javascript">
+
+      // creating JSON object
+      var ColorsJSON = {
+        "colors": ["Cyan", "Magenta", "Yellow", "Black", "Red", "Green", "Blue"],
+        "colorDetails": [
+          { "colorName": "Red", "colorHexCode": "#ff0000" },
+          { "colorName": "Green", "colorHexCode": "#00ff00" },
+          { "colorName": "Blue", "colorHexCode": "#0000ff" },
+        ]
+      };
+
+      console.log(ColorsJSON);
+
+      // accessing data from a json object 
+      // jsonMainObject.jsonSubObjectName.propertyName;
+      console.log(ColorsJSON.colors);
+      console.log(ColorsJSON.colors[0]);
+      console.log('----------------------------------------------------');
+
+      // for loop
+      document.write('<h1> Color Index & Color values - For loop </h1>');
+      let totalColors = ColorsJSON.colors.length;
+      for (let colorIndex = 0; colorIndex < totalColors; colorIndex++) {
+        document.write('<li>' + colorIndex + " : " + ColorsJSON.colors[colorIndex] + '</li>');
+      }
+
+      // for in loop
+      document.write('----------------------------------------------------');
+      document.write('<h1> Color Index & Color values - For in loop </h1>');
+
+      for(let _key in ColorsJSON.colors) {
+        document.write('<li>' + ColorsJSON.colors[_key] + '</li>');
+      }
+
+      document.write('----------------------------------------------------');
+      document.write('<h1> Inner Color Index & Color values - For in loop </h1>');
+
+      for (let mainKey in ColorsJSON.colorDetails) {
+        
+        for(let innerKey in ColorsJSON.colorDetails[mainKey]) {
+
+          document.write('<li>' + ColorsJSON.colorDetails[mainKey][innerKey] + '</li>');
+
+        }
+
+      }
+
+    </script>
+
+  </head>
+
+  <body>
+
+  </body>
+
+</html>

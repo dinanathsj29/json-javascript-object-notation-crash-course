@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>json-arrays</title>
+
+    <script type="text/javascript">
+
+      // creating JSON object
+      var TechnologiesJSONArray = [
+        {
+          "technologyName": "JSON (JavaScript Object Notation)",
+          "usage": "Data storage and exchange format",
+          "version": 1.0,
+          "cost": 0.00
+        },
+        
+        {
+          "technologyName": "HTML (HyperText Markup Language)",
+          "usage": "To create a web page pages/web sites/web apps",
+          "version": 5.0,
+          "cost": 0.00
+        }
+      ];
+
+      console.log(TechnologiesJSONArray);
+
+      // accessing data from a json object
+      // jsonObject[arrayPosition/ indexPosition].propertyName;
+      console.log(TechnologiesJSONArray[0].version); // 1.0
+      console.log(TechnologiesJSONArray[1].version); // 5.0
+
+      document.write('<li> <strong>Technology Name:</strong> ' + TechnologiesJSONArray[0].technologyName + ' || <strong>Version is:</strong> ' + TechnologiesJSONArray[0].version + '</li>');
+      document.write('<li> <strong>Technology Name:</strong> ' + TechnologiesJSONArray[1].technologyName + ' || <strong>Version is:</strong> ' + TechnologiesJSONArray[1].version + '</li>');
+
+    </script>
+
+  </head>
+
+  <body>
+    
+  </body>
+
+</html>

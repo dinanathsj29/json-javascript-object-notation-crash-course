@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>json-parse</title>
+
+    <script type="text/javascript">
+
+      // creating string object to hold json like data
+      var TechnologyStringObj = '{ "technologyName": "JSON (JavaScript Object Notation)", "inventor": "Douglas Crockford", "usage": "Data storage and exchange format", "version": 1.0, "cost": 0, "license": "Open Source - MIT" }';
+
+      console.log('TechnologyStringObj: ', TechnologyStringObj);
+      console.log(TechnologyStringObj.technologyName);  //undefined
+
+      // parse a string object to json
+      var TechnologyJSON = JSON.parse(TechnologyStringObj);
+      console.log('JSON.parse TechnologyJSON: ', TechnologyJSON);
+
+      // accessing data from a json object
+      // JsonObjectName.propertyName
+      console.log(TechnologyJSON.technologyName);
+      
+    </script>
+
+  </head>
+
+  <body>
+    
+  </body>
+
+</html>

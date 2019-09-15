@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>json-nested-objectes</title>
+
+    <script type="text/javascript">
+
+      // creating JSON object
+      var TechnologyJSONObject = {
+        "Json": {
+          "technologyName": "JSON (JavaScript Object Notation)",
+          "usage": "Data storage and exchange format",
+          "version": 1.0,
+          "cost": 0.00
+        },
+
+        "Html": {
+          "technologyName": "HTML (HyperText Markup Language)",
+          "usage": "To create a web page pages/web sites/web apps",
+          "version": 5.0,
+          "cost": 0.00
+        },
+      };
+
+      console.log(TechnologyJSONObject);
+
+      // accessing data from a json object 
+      // jsonMainObject.jsonSubObjectName.propertyName;
+      console.log(TechnologyJSONObject.Json.version); // 1.0
+      console.log(TechnologyJSONObject.Html.version); // 5.0
+
+      // square bracket syntax
+      console.log(TechnologyJSONObject.Json["version"]); // 1.0
+      console.log(TechnologyJSONObject.Html["version"]); // 5.0
+
+      document.write('<li> <strong>Technology Name:</strong> ' + TechnologyJSONObject.Json.technologyName + ' || <strong>Version is:</strong> ' + TechnologyJSONObject.Json.version + '</li>');
+      document.write('<li> <strong>Technology Name:</strong> ' + TechnologyJSONObject.Html.technologyName + ' || <strong>Version is:</strong> ' + TechnologyJSONObject.Html.version + '</li>');
+
+    </script>
+
+  </head>
+
+  <body>
+    
+  </body>
+
+</html>

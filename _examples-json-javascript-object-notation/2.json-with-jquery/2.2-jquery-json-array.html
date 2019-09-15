@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery-json-array</title>
+
+    <script src="./_library/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+
+      $(document).ready(function() {
+        // creating JSON object
+        var TechnologiesJSONArray = [
+          {
+            "technologyName": "JSON (JavaScript Object Notation)",
+            "usage": "Data storage and exchange format",
+            "version": 1.0,
+            "cost": 0.00
+          },
+          
+          {
+            "technologyName": "HTML (HyperText Markup Language)",
+            "usage": "To create a web page pages/web sites/web apps",
+            "version": 5.0,
+            "cost": 0.00
+          }
+        ];
+
+        // accessing data from a json object
+        // jsonObject[arrayPosition/ indexPosition].propertyName;
+        console.log(TechnologiesJSONArray[0].version); // 1.0
+        console.log(TechnologiesJSONArray[1].version); // 5.0
+
+        var technologyNameText = TechnologiesJSONArray[0].technologyName + '<br>' ;
+        technologyNameText += TechnologiesJSONArray[1].technologyName;
+
+        // assign data to html element
+        $('#textContainerDiv').html(technologyNameText);
+
+      });
+    </script>
+
+  </head>
+
+  <body>
+
+    <div id="textContainerDiv"></div>
+    
+  </body>
+
+</html>

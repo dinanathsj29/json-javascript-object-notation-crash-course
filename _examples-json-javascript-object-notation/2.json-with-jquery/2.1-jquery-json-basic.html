@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery-json-basics</title>
+
+    <script src="./_library/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+
+      $(document).ready(function() {
+        // creating JSON object
+        var Technology = {
+          "technologyName": "JSON (JavaScript Object Notation)",
+          "usage": "Data storage and exchange format",
+          "version": 1.0,
+          "cost": 0.00
+        }
+
+        // accessing data from a json object
+        // JsonObjectName.propertyName
+        console.log(Technology.technologyName); // JSON (JavaScript Object Notation)
+
+        var resultText = '';
+        resultText += 'Technology Name = ' + Technology.technologyName + '<br/>';
+        resultText += 'Usage = ' + Technology.usage + '<br/>';
+        resultText += 'Version = ' + Technology.version + '<br/>';
+        resultText += 'Cost = ' + Technology.cost + '<br/>';
+
+        // assign data to html element
+        $('#textContainerDiv').html(resultText);
+
+      });
+    </script>
+
+  </head>
+
+  <body>
+
+    <div id="textContainerDiv"></div>
+    
+  </body>
+
+</html>

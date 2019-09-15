@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>json-access-modify-data</title>
+
+    <script type="text/javascript">
+
+      // creating JSON object
+      var TechnologyJSON = {
+        "technologyName": "JSON (JavaScript Object Notation)",
+        "inventor": "Douglas Crockford",
+        "usage": "Data storage and exchange format",
+        "version": 1.0,
+        "cost": 0,
+        "license": "Open Source - MIT"
+      }
+
+      // accessing data from a json object
+      // JsonObjectName.propertyName
+
+      // Dot notation syntax 
+      console.log(TechnologyJSON.inventor);
+      document.write('<li>' + TechnologyJSON.inventor + '</li>');
+      document.write('<li>' + TechnologyJSON.usage + '</li>');
+
+      // Square bracket syntax 
+      console.log(TechnologyJSON['inventor']);
+      document.write('<li>' + TechnologyJSON['inventor'] + '</li>');
+      document.write('<li>' + TechnologyJSON['license'] + '</li>');
+
+      // modifying data
+      var techName1 = TechnologyJSON.technologyName = 'XML';
+      console.log(techName1);
+      document.write('<br/><br/><li>' + techName1 + '</li>');
+
+      var techName2 = TechnologyJSON['technologyName'] = 'AJAX';
+      console.log(techName2);
+      document.write('<br/><br/><li>' + techName2 + '</li>');
+
+    </script>
+
+  </head>
+
+  <body>
+    
+  </body>
+
+</html>

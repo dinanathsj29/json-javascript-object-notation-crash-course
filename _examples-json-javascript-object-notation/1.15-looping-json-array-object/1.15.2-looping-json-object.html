@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>looping-json-object</title>
+
+    <script type="text/javascript">
+
+      // creating JSON object
+      var TechnologyJSON = {
+          "technologyName": "JSON (JavaScript Object Notation)",
+          "usage": "Data storage and exchange format",
+          "version": 1.0,
+          "cost": 0.00,
+          "keywords":['json','JavaScript','Object','Notation','key','value','key value pair'],
+
+          "Html": {
+            "technologyName": "HTML (HyperText Markup Language)",
+            "usage": "To create a web page pages/web sites/web apps",
+            "version": 5.0,
+            "cost": 0.00
+          },
+      };
+
+      console.log(TechnologyJSON);
+
+      // accessing data from a json object 
+      // jsonMainObject.jsonSubObjectName.propertyName;
+      console.log(TechnologyJSON.keywords);
+      console.log(TechnologyJSON.keywords[0]);
+      console.log(TechnologyJSON.Html);
+      console.log('----------------------------------------------------');
+
+      // for in loop
+      // document.write('----------------------------------------------------');
+      document.write('<h1> JSON Object keys </h1>');
+
+      for(let _key in TechnologyJSON) {
+        document.write('<li>' + _key + '</li>');
+      }
+
+      // document.write('----------------------------------------------------');
+      document.write('<h1> JSON Object keys and Values</h1>');
+
+      for(let _key in TechnologyJSON) {
+        document.write('<li>' + _key + ' : ' + TechnologyJSON[_key] + '</li>');
+      }
+
+      // document.write('----------------------------------------------------');
+      document.write('<h1> JSON Object - Inner objects keys and Values</h1>');
+
+      for(let _key in TechnologyJSON.Html) {
+        document.write('<li>' + _key + ' : ' + TechnologyJSON.Html[_key] + '</li>');
+      }
+
+    </script>
+
+  </head>
+
+  <body>
+    
+  </body>
+
+</html>

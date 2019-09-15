@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>looping-json-array</title>
+
+    <script type="text/javascript">
+
+      // creating JSON object
+      var TechnologyJSON = {
+          "technologyName": "JSON (JavaScript Object Notation)",
+          "usage": "Data storage and exchange format",
+          "version": 1.0,
+          "cost": 0.00,
+          "keywords":['json','JavaScript','Object','Notation','key','value','key value pair']
+      };
+
+      console.log(TechnologyJSON);
+
+      // accessing data from a json object 
+      // jsonMainObject.jsonSubObjectName.propertyName;
+      console.log(TechnologyJSON.keywords);
+      console.log(TechnologyJSON.keywords[0]);
+
+      // 1. for loop
+      let keywordsLength = TechnologyJSON.keywords.length;
+
+      document.write('<h1> Technology keyword - For loop </h1>');
+      for(let keyword=0; keyword < keywordsLength; keyword++) {
+        document.write('<li>' + TechnologyJSON.keywords[keyword] + '</li>');
+      }
+
+      // 2. for in loop
+      document.write('----------------------------------------------------');
+      document.write('<h1> Technology keyword  - For in loop </h1>');
+
+      let keywords = TechnologyJSON.keywords;
+      for(let kw in keywords) {
+        document.write('<li>' + TechnologyJSON.keywords[kw] + '</li>');
+      }
+
+    </script>
+
+  </head>
+
+  <body>
+    
+  </body>
+
+</html>

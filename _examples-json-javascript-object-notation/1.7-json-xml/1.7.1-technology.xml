@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<technology>
+  <technologyName>XML (eXtensible Markup Language)</technologyName>
+  <inventor>Ed Mosher</inventor>
+  <usage>Data storage and exchange format</usage>
+  <version>1.0</version>
+  <cost>0</cost>
+  <license>Open Source - MIT</license>
+</technology>

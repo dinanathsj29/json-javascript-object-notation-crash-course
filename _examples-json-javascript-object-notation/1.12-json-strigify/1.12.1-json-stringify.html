@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>json-stringify</title>
+
+    <script type="text/javascript">
+
+      // json object
+      var TechnologyJSON = { "technologyName": "JSON (JavaScript Object Notation)", "inventor": "Douglas Crockford", "usage": "Data storage and exchange format", "version": 1.0, "cost": 0, "license": "Open Source - MIT" };
+
+      console.log(TechnologyJSON);
+      console.log(TechnologyJSON.technologyName);
+
+      // by default json object are not printed in html view - it shows `[object Object]`
+      document.write('initial TechnologyJSON object:', TechnologyJSON);
+
+      // parse a json object to string
+      var TechnologyJSONStringify = JSON.stringify(TechnologyJSON);
+
+      // once json object converted to string - it can be available/placed for view
+      document.write('<br/> <br/> <strong>JSON.stringify</strong> :', TechnologyJSONStringify);
+
+      console.log('JSON.stringify TechnologyJSONStringify: ', TechnologyJSONStringify);
+      console.log(TechnologyJSONStringify.technologyName); //undefined
+
+      // parse a string object to json
+      var TechnologyJSONObj = JSON.parse(TechnologyJSONStringify);
+      console.log(TechnologyJSONObj);
+      console.log(TechnologyJSONObj.technologyName);
+      
+    </script>
+
+  </head>
+
+  <body>
+    
+  </body>
+
+</html>
