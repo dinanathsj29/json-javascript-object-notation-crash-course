@@ -84,6 +84,7 @@ Topics included/covered
     - 1.13. [JSON Arrays](#113-json-arrays)
     - 1.14. [Nested JSON Objects](#114-nested-json-objects)
     - 1.15. [Looping through JSON Array-Objects](#115-looping-through-json-array-objects)
+    - 1.16. [Marshalling and Unmarshalling](#116-marshalling-and-unmarshalling)
 
 2. [JSON with jQuery](#2-json-with-jquery)
 
@@ -898,6 +899,19 @@ Second or another way to access, read or modify JSON object data is Square brack
 
 </html>
 ```
+
+
+1.16. Marshalling and Unmarshalling
+---------------------
+
+### 1.16.1. Marshalling
+- Creating JSON data/object from custom objects
+- Converting your custom object to a representation accepted by the client in the form of JSON 
+- ( Object --> JSON )
+
+### 1.16.2. Unmarshalling
+- The opposite of marshalling is unmarshalling - the creation of custom objects from XML, JSON and the like
+- ( JSON --> Object )
 
 
 2 JSON with jQuery
