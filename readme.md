@@ -269,7 +269,7 @@ The JSON format is almost exactly alike to JavaScript objects.
 | --------------------------------|---------------------------------------|
 | <p align="center"> <img src="_images-json-javascript-object-notation/json-logo-3.png" alt="JSON - JavaScript Object Notation" title="JSON - JavaScript Object Notation" width="200" /> </p> | <p align="center"> <img src="_images-json-javascript-object-notation/xml-logo-2.png" alt="XML - eXtensible Markup Language" title="XML - eXtensible Markup Language" width="200" /> </p>|
 | JavaScript Object Notation      | eXtensible Markup Language            |
-| JSON uses `key : value` or `name : value` pair to store data (JSON doesn't use end tag) | XML uses `tags &lt; value &gt;, element or node` to store data | 
+| JSON uses `key : value` or `name : value` pair to store data (JSON doesn't use end tag) | XML uses **tags &lt; value &gt;, element or node** to store data | 
 | JSON is shorter, JSON has a more compact style than XML                 | XML is pretty larger/lengthy as we need to open and close tags for every `name` or `key`|
 | JSON is `quicker and easier` to read and write | XML is `little difficult to read and write` as we need to write many tags |
 | JSON can use arrays             | XML cant use arrays, it uses tags     |
