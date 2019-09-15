@@ -85,7 +85,9 @@ Topics included/covered
     - 1.14. [Nested JSON Objects](#114-nested-json-objects)
     - 1.15. [Looping through JSON Array-Objects](#115-looping-through-json-array-objects)
 
-2. [JSON Resources](#2-json-resources)
+2. [JSON with jQuery](#2-json-with-jquery)
+
+3. [JSON Resources](#3-json-resources)
 
 1 Introduction to JSON
 =====================
@@ -748,6 +750,7 @@ Second or another way to access, read or modify JSON object data is Square brack
 </html>
 ```
 
+<hr/>
 
 ### 1.15.2. Looping Through an Object
 
@@ -823,6 +826,8 @@ Second or another way to access, read or modify JSON object data is Square brack
 </html>
 ```
 
+<hr/> 
+
 > **Syntax & Example**: `1.15.3-looping-json-array.html`
 
 ```html
@@ -894,7 +899,201 @@ Second or another way to access, read or modify JSON object data is Square brack
 </html>
 ```
 
-2 JSON Resources
+
+2 JSON with jQuery
+=====================  
+- jQuery is a lightweight, `"write less, do more"`, JavaScript library
+- jQuery is a fast, small, feature-rich and easy to learn JavaScript library
+- It makes things like `HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers`
+- With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript
+- `jQuery is just a JavaScript library` - jQuery greatly simplifies JavaScript programming
+- All the power of jQuery is accessed via JavaScript, so having a strong grasp of JavaScript is essential for understanding, structuring, and debugging your code
+
+We can download the jQuery library script files from jQuery official website `https://jquery.com/download/` or use CDN (Content Delivery Network / Content Distribution Network) links like `https://cdnjs.com/libraries/jquery/` or `https://developers.google.com/speed/libraries/`
+
+### 2.1. jQuery JSON basics
+
+> **Syntax & Example**: `2.json-with-jquery/2.1-jquery-json-basic.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery-json-basics</title>
+
+    <script src="./_library/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+
+      $(document).ready(function() {
+        // creating JSON object
+        var Technology = {
+          "technologyName": "JSON (JavaScript Object Notation)",
+          "usage": "Data storage and exchange format",
+          "version": 1.0,
+          "cost": 0.00
+        }
+
+        // accessing data from a json object
+        // JsonObjectName.propertyName
+        console.log(Technology.technologyName); // JSON (JavaScript Object Notation)
+
+        var resultText = '';
+        resultText += 'Technology Name = ' + Technology.technologyName + '<br/>';
+        resultText += 'Usage = ' + Technology.usage + '<br/>';
+        resultText += 'Version = ' + Technology.version + '<br/>';
+        resultText += 'Cost = ' + Technology.cost + '<br/>';
+
+        // assign data to html element
+        $('#textContainerDiv').html(resultText);
+
+      });
+    </script>
+
+  </head>
+
+  <body>
+
+    <div id="textContainerDiv"></div>
+    
+  </body>
+
+</html>
+```
+
+<hr/> 
+
+### 2.2. jQuery JSON Arrays
+
+> **Syntax & Example**: `2.json-with-jquery/2.2-jquery-json-array.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery-json-array</title>
+
+    <script src="./_library/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+
+      $(document).ready(function() {
+        // creating JSON object
+        var TechnologiesJSONArray = [
+          {
+            "technologyName": "JSON (JavaScript Object Notation)",
+            "usage": "Data storage and exchange format",
+            "version": 1.0,
+            "cost": 0.00
+          },
+          
+          {
+            "technologyName": "HTML (HyperText Markup Language)",
+            "usage": "To create a web page pages/web sites/web apps",
+            "version": 5.0,
+            "cost": 0.00
+          }
+        ];
+
+        // accessing data from a json object
+        // jsonObject[arrayPosition/ indexPosition].propertyName;
+        console.log(TechnologiesJSONArray[0].version); // 1.0
+        console.log(TechnologiesJSONArray[1].version); // 5.0
+
+        var technologyNameText = TechnologiesJSONArray[0].technologyName + '<br>' ;
+        technologyNameText += TechnologiesJSONArray[1].technologyName;
+
+        // assign data to html element
+        $('#textContainerDiv').html(technologyNameText);
+
+      });
+    </script>
+
+  </head>
+
+  <body>
+
+    <div id="textContainerDiv"></div>
+    
+  </body>
+
+</html>
+```
+
+<hr/> 
+
+
+### 2.3. jQuery nested JSON Objects
+
+> **Syntax & Example**: `2.json-with-jquery/2.3-jquery-json-nested-object.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery-json-nested-objectes</title>
+
+    <script src="./_library/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+
+      $(document).ready(function() {
+        // creating JSON object
+        var TechnologyJSONObject = {
+          "Json": {
+            "technologyName": "JSON (JavaScript Object Notation)",
+            "usage": "Data storage and exchange format",
+            "version": 1.0,
+            "cost": 0.00
+          },
+
+          "Html": {
+            "technologyName": "HTML (HyperText Markup Language)",
+            "usage": "To create a web page pages/web sites/web apps",
+            "version": 5.0,
+            "cost": 0.00
+          },
+        };
+
+        // accessing data from a json object 
+        // jsonMainObject.jsonSubObjectName.propertyName;
+        console.log(TechnologyJSONObject.Json.version); // 1.0
+        console.log(TechnologyJSONObject.Html.version); // 5.0
+
+        // square bracket syntax
+        console.log(TechnologyJSONObject.Json["version"]); // 1.0
+        console.log(TechnologyJSONObject.Html["version"]); // 5.0
+
+        var technologyNameText = TechnologyJSONObject.Json.technologyName + '<br>' ;
+       technologyNameText += TechnologyJSONObject.Html.technologyName;
+
+        // assign data to html element
+        $('#textContainerDiv').html(technologyNameText);
+
+      });
+    </script>
+
+  </head>
+
+  <body>
+
+    <div id="textContainerDiv"></div>
+    
+  </body>
+
+</html>
+```
+
+3 JSON Resources
 =====================  
 
 > ### JSON Editor Online - view, edit and format JSON online
